@@ -1,24 +1,24 @@
-/*----------- Farmer.cpp ------------------------------------------
-
-   This file implements the member functions for the ADT Farmer
-
--------------------------------------------------------------------*/
+/**
+ * @file Farmer.cpp
+ * @author Robert McKay
+ * @brief Implementation file for the Farmer object.
+ * @version 0.1
+ * @date 2022-05-11
+ * 
+ */
 
 #include "Farmer.h"
 
-// definition for the constructor 
 Farmer::Farmer()
 {
     onSouthBank = true;
 }
 
-// definition for the member function reset
 void Farmer::reset()
 {
     onSouthBank = true;
 }
 
-// defintion for the member function display
 void Farmer::display()
 {
     if (onSouthBank)
@@ -31,7 +31,6 @@ void Farmer::display()
     }
 }
 
-// definition for the member function checkWonLost
 bool Farmer::hasWonLost(River *river)
 {
     bool hasWonLost = false;
@@ -55,7 +54,6 @@ bool Farmer::hasWonLost(River *river)
     return hasWonLost;
 }
 
-// definition for the member function crossRiver
 void Farmer::crossRiver(River *river)
 {
     string decision = getDecision(river);
@@ -72,7 +70,6 @@ void Farmer::crossRiver(River *river)
     onSouthBank = !onSouthBank;
 }
 
-// definition for the private member function getDecision
 string Farmer::getDecision(River *river)
 {
     string decision;
@@ -89,7 +86,6 @@ string Farmer::getDecision(River *river)
     return decision;
 }
 
-// definition for the private member function getDecisionAux
 string Farmer::getDecisionAux(BankList *bank)
 {
     string decision;
@@ -120,7 +116,6 @@ string Farmer::getDecisionAux(BankList *bank)
     }
 }
 
-// definition for the private member function isConflict
 bool Farmer::isConflict(BankList *bank)
 {
     if (bank->search("fox") && bank->search("chicken"))

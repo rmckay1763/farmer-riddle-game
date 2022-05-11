@@ -1,19 +1,20 @@
-/*----------- BankList.cpp ------------------------------------------
-
-   This file implements the member functions for the ADT BankList
-
--------------------------------------------------------------------*/
+/**
+ * @file BankList.cpp
+ * @author Robert McKay
+ * @brief Implementation file for BankList.
+ * @version 0.1
+ * @date 2022-05-11
+ * 
+ */
 
 #include "BankList.h"
 
-// definition for constructor
 BankList::BankList()
 {
     head = nullptr;
     tail = nullptr;
 }
 
-// definition for destructor
 BankList::~BankList()
 {
     ListNode *nodePtr, *nextNode;
@@ -26,7 +27,6 @@ BankList::~BankList()
     }
 }
 
-// defintion for the member function reset()
 void BankList::reset()
 {
     ListNode *nodePtr, *nextNode;
@@ -41,11 +41,10 @@ void BankList::reset()
     tail = nullptr;
 }
 
-// definition for the member function append
-void BankList::append(string newData)
+void BankList::append(string value)
 {
     ListNode *newNode;
-    newNode = new ListNode(newData);
+    newNode = new ListNode(value);
     if (!head)
     {
         head = newNode;
@@ -58,15 +57,14 @@ void BankList::append(string newData)
     }
 }
 
-// definition for the member function remove
-void BankList::remove(string removeData)
+void BankList::remove(string target)
 {
     ListNode *nodePtr, *previousNode;
     if (!head)
     {
         return;
     }
-    if (head->data == removeData)
+    if (head->data == target)
     {
         nodePtr = head->next;
         delete head;
@@ -75,7 +73,7 @@ void BankList::remove(string removeData)
     else
     {
         nodePtr = head;
-        while (nodePtr && nodePtr->data != removeData)
+        while (nodePtr && nodePtr->data != target)
         {
             previousNode = nodePtr;
             nodePtr = nodePtr->next;
@@ -92,13 +90,12 @@ void BankList::remove(string removeData)
     }
 }
 
-// definition for the member function search
-bool BankList::search(string searchData)
+bool BankList::search(string target)
 {
     ListNode *nodePtr = head;
     while (nodePtr)
     {
-        if (nodePtr->data == searchData)
+        if (nodePtr->data == target)
         {
             return true;
         }
@@ -107,7 +104,6 @@ bool BankList::search(string searchData)
     return false;
 }
 
-// definition for the member function isEmpty
 bool BankList::isEmpty()
 {
     if (!head)
@@ -120,7 +116,6 @@ bool BankList::isEmpty()
     }
 }
 
-// definition for the member function display()
 void BankList::display()
 {
     ListNode *nodePtr = head;

@@ -1,19 +1,11 @@
-/*----------------- BankList.h --------------------------------------
-
-    This file contains the declaration of the class BankList which
-    implements a linked list data type
-
-    Basic operations:
-        constructor - creates a list object, sets root to null
-        destructor - deallocates memory for all nodes in the list
-        reset - remove all the nodes in the list
-        append - adds a node to the end of the list
-        remove - removes a specified node from the list
-        search - returns true if a specified node is in the list
-        isEmpty - returns true if the list is empty
-        display - print the list from root to tail
-
--------------------------------------------------------------------*/
+/**
+ * @file BankList.h
+ * @author Robert McKay
+ * @brief Singly linked list of strings for use with the Farmer Riddle game.
+ * @version 0.1
+ * @date 2022-05-10
+ * 
+ */
  
 #ifndef BANKLIST_H
 #define BANKLIST_H
@@ -21,103 +13,87 @@
 #include <iostream>
 #include <string>
 using namespace std;
+
+/**
+ * @brief Singly linked list of strings with inner node class. 
+ * 
+ */
 class BankList
 {
     public:
 
-    //-------------------- Public Member Functions ------------------
-
         /**
-         * @brief Construct a new BankList object
+         * @brief Construct a new BankList object.
          * 
          */
         BankList();
-        /*-----------------------------------------------------------
-         Construct a BankList object
-
-         Precondition:  None.
-         Postcondition: An empty BankList has been constructed.
-        -----------------------------------------------------------*/
 
         /**
-         * @brief Destroy the Bank List object
+         * @brief Destroy the Bank List object.
          * 
          */
         ~BankList();
-        /*-----------------------------------------------------------
-         Destructor.
-
-         Precondition:  The BankList object exists.
-         Postcondition: All nodes in the list have been deallocated.
-        -----------------------------------------------------------*/
 
         /**
-         * @brief 
+         * @brief Remove all nodes in the list.
          * 
          */
         void reset();
-        /*-----------------------------------------------------------
-         Remove all nodes in the list.
 
-         Precondition: The BankList object exists.
-         Postcondition: All nodes in the list are removed. The
-                        head and tail are set to null.
-        -----------------------------------------------------------*/
+        /**
+         * @brief Append a new node to the list.
+         * 
+         * @param value Data to append to list
+         */
+        void append(string value);
 
-        void append(string newData);
-        /*-----------------------------------------------------------
-         Append a node to the list.
+        /**
+         * @brief Remove a node from the list with matching data.
+         * 
+         * @param target The data of the node to remove.
+         */
+        void remove(string target);
 
-         Precondition: The BankList object exists.
-         Postcondition: A new node has been added to the list.
-        -----------------------------------------------------------*/
+        /**
+         * @brief Search if the list contains a node with a specified value.
+         * 
+         * @param target The value to search for.
+         * @return true If the list contains the value, false otherwise.
+         */
+        bool search(string target);
 
-        void remove(string removeData);
-        /*-----------------------------------------------------------
-         Remove a node to the list.
-
-         Precondition: The BankList is not empty.
-         Postcondition: The specified node has been removed.
-        -----------------------------------------------------------*/
-
-        bool search(string searchData);
-        /*-----------------------------------------------------------
-         Search for a node in the list.
-
-         Precondition: The BankList object exists.
-         Postcondition: Return true if the specified node is in the
-                        list, return false otherwise.
-        -----------------------------------------------------------*/
-
+        /**
+         * @brief Check if the list is empty.
+         * 
+         * @return true If the list is empty, false otherwise 
+         */
         bool isEmpty();
-        /*-----------------------------------------------------------
-         Determine if the list is empty.
 
-         Precondition: The BankList object exists.
-         Postcondition: Return true if the list is empty, otherwise
-                        return false.
-        -----------------------------------------------------------*/
-
+        /**
+         * @brief Print the list to std out
+         * 
+         */
         void display();
-        /*-----------------------------------------------------------
-         Display the list.
-
-         Precondition: The BankList object exists.
-         Postcondition: The list is printed from head to tail.
-        -----------------------------------------------------------*/
 
     private:
 
-    //------------------ Data Members -------------------------------
-
-    // definition for listNode class
+    /**
+     * @brief List node for BankList.
+     * 
+     */
     class ListNode
     {
-        public:
+        private:
+            /**
+             * @brief Construct a new List Node object.
+             * 
+             * @param str Value to store at node.
+             */
+            ListNode(string str) : data(str), next(nullptr) {}
+
             string data;
             ListNode *next;
-            // constructor - set data
-            ListNode(string str) : data(str), next(nullptr) {}
+            friend class BankList;
     };
 
     ListNode *head;

@@ -1,25 +1,14 @@
-/*----------------- BankList.h --------------------------------------
-
-    Title: Fox, Chicken, Grain Riddle
-    Author: Robert McKay
-    Date: 08/03/2020
-    Purpose:
-        This program simulates the classic riddle where a farmer
-        has to get a fox, chicken, and grain accross a river
-        without leaving the fox with the chicken or leaving the
-        chicken with the grain.
-
-    Programmer Defined ADT's:
-        BankList - Implements a linked list to keep track of the
-                   farmer's items.
-        River - Consists of two BankList data members (southBank
-                and northBank) and functions to faciliate the
-                rules of the game
-        Farmer - Uses a boolean to keep track of which bank the 
-                 farmer is on. Contains functions that facilitate
-                 the rules of the game.
-
--------------------------------------------------------------------*/
+/**
+ * @file driver.cpp
+ * @author Robert McKay
+ * @brief This program simulates the classic riddle where a farmer has to get
+ * a fox, chicken, and grain accross a river without leaving the fox with the
+ * chicken or leaving the chicken with the grain.
+ * 
+ * @version 0.1
+ * @date 2022-05-11
+ * 
+ */
 
 #include "Farmer.h"
 

@@ -1,12 +1,14 @@
-/*----------- River.cpp ------------------------------------------
-
-   This file implements the member functions for the ADT River
-
--------------------------------------------------------------------*/
+/**
+ * @file River.cpp
+ * @author Robert McKay
+ * @brief Implementation file for River object.
+ * @version 0.1
+ * @date 2022-05-11
+ * 
+ */
 
 #include "River.h"
 
-// definition for the constructor
 River::River()
 {
     southBank.append("fox");
@@ -14,7 +16,6 @@ River::River()
     southBank.append("grain");
 }
 
-// definition for the member function reset
 void River::reset()
 {
     southBank.reset();
@@ -24,19 +25,16 @@ void River::reset()
     southBank.append("grain");
 }
 
-// defintion for the member function getSouthBank
 BankList* River::getSouthBank()
 {
     return &southBank;
 }
 
-// defintion for the member function getNorthBank
 BankList* River::getNorthBank()
 {
     return &northBank;
 }
 
-// definition for the member function display
 void River::display()
 {
     cout << "\nSouth Bank:\n";
@@ -45,7 +43,6 @@ void River::display()
     northBank.display();
 }
 
-// definition for the member function moveItemAcross
 void River::moveItemAcross(bool onSouthBank, string item)
 {
     if (onSouthBank)
