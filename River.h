@@ -22,6 +22,10 @@ class River
     public:
 
     //-------------------- Public Member Functions ------------------
+        /**
+         * @brief Construct a new River object
+         * 
+         */
         River();
         /*-----------------------------------------------------------
          Construct a River object

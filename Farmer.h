@@ -41,6 +41,10 @@ class Farmer
          Postcondition: the data member onSouthBank is set to true.
         -----------------------------------------------------------*/
 
+        /**
+         * @brief 
+         * 
+         */
         void reset();
         /*-----------------------------------------------------------
          Reset a Farmer object

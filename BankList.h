@@ -26,6 +26,11 @@ class BankList
     public:
 
     //-------------------- Public Member Functions ------------------
+
+        /**
+         * @brief Construct a new BankList object
+         * 
+         */
         BankList();
         /*-----------------------------------------------------------
          Construct a BankList object
@@ -34,6 +39,10 @@ class BankList
          Postcondition: An empty BankList has been constructed.
         -----------------------------------------------------------*/
 
+        /**
+         * @brief Destroy the Bank List object
+         * 
+         */
         ~BankList();
         /*-----------------------------------------------------------
          Destructor.
@@ -42,6 +51,10 @@ class BankList
          Postcondition: All nodes in the list have been deallocated.
         -----------------------------------------------------------*/
 
+        /**
+         * @brief 
+         * 
+         */
         void reset();
         /*-----------------------------------------------------------
          Remove all nodes in the list.
